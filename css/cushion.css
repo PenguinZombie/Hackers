@@ -1,0 +1,230 @@
+/************************************
+  Header部分
+*************************************/
+html,body {
+	/* FireFox用 boxの親でのセンタリングがきかないので */
+    text-align:center;
+	height:100%;
+	background-color:#ebeae7;
+}
+.header {
+	background:black;
+	width:100%;
+	/* Firefox用 */
+	background:-moz-linear-gradient(
+			left top,#000000,  
+            #333333 40%,  
+            #000000 80%);
+	/* Safari,Google Chrome用 */
+	background:-webkit-gradient(
+			linear,left top,right bottom,
+			from(#000000),  
+            color-stop(0.4, #333333),    
+            color-stop(0.8, #000000));
+	/* IE 使えるみたいだが複数していの仕方がわからない
+    filter:progid:DXImageTransform.Microsoft.gradient
+	(startColorstr=#000000,endColorstr=#333333);
+    zoom: 1; */
+	height:80px;
+}
+/* ロゴ画像の位置調整 */
+.logo {
+	padding-right:750px;
+	padding-top:20px;
+}
+/************************************
+  wrap(1カラムのレイアウト)
+*************************************/
+.wrap {
+	width:750px;
+	display: -webkit-box;
+    display: -moz-box;
+    display: -o-box;
+    display: box;
+	/* センタリング.テキストを左に戻す*/
+	margin:0 auto;
+	text-align:left;
+	/* これを忘れると背景の色が反映してしまうので白にしておく */
+	background-color:#FFFFFF;
+	margin-top:20px;
+}
+.center {
+	padding:35px;
+}
+.moj a {
+	text-decoration:none;
+	font-weight:bold;
+	color:red;
+}
+/************************************
+  テキストボックスの設定
+*************************************/
+.text-input {
+	width:290px;
+	border:1px solid #cccccc;
+	/* 上下 左右*/
+	padding:5px 7px;
+	/* ブラウザによって違うフォーカス時の線を無しにする */
+	outline:none;
+	/* 角を少しまるくする */
+	border-radius:2px;
+	/* 背景のグラデーション
+	　　 Firefox */
+    background:-moz-linear-gradient(
+        top,
+        #eee,
+        #fff
+	);
+	/* Webkit */
+    background:-webkit-gradient(
+        linear,
+        left top,
+        left bottom,
+        from(#eee),
+        to(#fff)
+    );
+	/* IE */
+    filter:progid:DXImageTransform.Microsoft.gradient
+	(startColorstr=#ffeeeeee,endColorstr=#ffffffff);
+    zoom: 1;
+}
+/* フォーカスしたときに影をつける */
+.text-input:focus {
+	border:1px solid #66ccff;
+	/* box-shadow:縦,横.ぼかし,広がり */
+	/* Safari, Chrome用 外側,内側の影 カンマ区切りでしないと両方指定出来ない */
+	-webkit-box-shadow:0px 0px 3px 0px #66ccff , inset 0px 0px 3px 0px #66ccff;
+	/* Firefox用 外側,内側の影 */
+	-moz-box-shadow:0px 0px 3px 0px #66ccff , inset 0px 0px 3px 0px #66ccff;
+	/* 他のブラウザ?　CSS3 デフォルトの書き方 */
+	box-shadow:0px 0px 3px 0px #66ccff , inset 0px 0px 3px 0px #66ccff;
+}
+/* テーブルの設定 */
+.cushion_table td{
+	padding:11px;
+}
+/* 以下の内容～の設定 */
+.moj {
+	font-size:14px;
+}
+/* チェックボックスの位置調整 */
+.show-pass {
+	margin-left:6px;
+}
+/************************************
+  プレースホルダーの設定
+*************************************/
+/* 一番外枠のplaceholding-inputを基準にする */
+.placeholding-input {
+	position:relative;
+}
+/* テキストをテキストボックスと重ねるように設定 */
+.placeholding-input .placeholder {
+	position:absolute;
+	color:#999;
+	top:6px;
+	left:11px;
+	cursor:text;
+	display:none;
+}
+/* +での連結はその要素のあとって意味だけど,これでフォーカスしたときに.placeholderのCSSを変更出来る */
+.placeholding-input input:focus + .placeholder{
+	color:#ccc;
+}
+.load-gif {
+	padding-right:15px;
+	display:none;
+}
+/* エラーメッセージ部分を隠す */
+.result {
+	color:red;
+	font-weight:bold;
+	font-size:12px;
+	text-align:left;
+	display:none;
+	border:2px solid red;
+	background-color:#ffff99;
+	padding:8px;
+	border-radius:2px;
+}
+/* 新規登録ボタン,右寄せにしてから位置を調整,こうしないとgif表示時に位置が動いてしまう */
+.td_right {
+	text-align:right;
+}
+.register {
+	margin-right:175px;
+}
+/************************************
+  footer(フッター部分)の設定
+*************************************/
+.footer {
+	width:100%;
+	height:50px;
+	background-color:#AAAAAA;
+	/* この二つでフッターを一番下に固定出来る */
+	position: absolute; 
+	bottom: 0;
+}
+.footer_content {
+	/* heightと同じ高さにすることで垂直方向の真ん中に配置出来る */
+	line-height:50px
+}
+/************************************
+  ボタンだったりboxに対してのCSS(デザイン関係のCSSはほぼコピペ)
+*************************************/
+/* 全て参考資料参考 */
+/* アカウント生成 */
+.register {
+   border: 2px solid #0a3c59;
+   background: #3e779d;
+   background: -webkit-gradient(linear, left top, left bottom, from(#65a9d7), to(#3e779d));
+   background: -webkit-linear-gradient(top, #65a9d7, #3e779d);
+   background: -moz-linear-gradient(top, #65a9d7, #3e779d);
+   background: -ms-linear-gradient(top, #65a9d7, #3e779d);
+   background: -o-linear-gradient(top, #65a9d7, #3e779d);
+   background-image: -ms-linear-gradient(top, #65a9d7 0%, #3e779d 100%);
+   padding: 9.5px 19px;
+   -webkit-border-radius: 2px;
+   -moz-border-radius: 2px;
+   border-radius: 2px;
+   -webkit-box-shadow: rgba(255,255,255,0.4) 0 1px 0, inset rgba(255,255,255,0.4) 0 1px 0;
+   -moz-box-shadow: rgba(255,255,255,0.4) 0 1px 0, inset rgba(255,255,255,0.4) 0 1px 0;
+   box-shadow: rgba(255,255,255,0.4) 0 1px 0, inset rgba(255,255,255,0.4) 0 1px 0;
+   text-shadow: #7ea4bd 0 1px 0;
+   color: #07135c;
+   font-size: 14px;
+   font-family: helvetica, serif;
+   text-decoration: none;
+   vertical-align: middle;
+}
+.register:hover {
+   border: 2px solid #0a3c59;
+   background: #3e779d;
+   background: -webkit-gradient(linear, left top, left bottom, from(#65a9d7), to(#3e779d));
+   background: -webkit-linear-gradient(top, #65a9d7, #3e779d);
+   background: -moz-linear-gradient(top, #65a9d7, #3e779d);
+   background: -ms-linear-gradient(top, #65a9d7, #3e779d);
+   background: -o-linear-gradient(top, #65a9d7, #3e779d);
+   background-image: -ms-linear-gradient(top, #65a9d7 0%, #3e779d 100%);
+   color: #333961;
+}
+.register:active {
+   text-shadow: #1e4158 0 1px 0;
+   border: 2px solid #0a3c59;
+   background: #65a9d7;
+   background: -webkit-gradient(linear, left top, left bottom, from(#3e779d), to(#3e779d));
+   background: -webkit-linear-gradient(top, #3e779d, #65a9d7);
+   background: -moz-linear-gradient(top, #3e779d, #65a9d7);
+   background: -ms-linear-gradient(top, #3e779d, #65a9d7);
+   background: -o-linear-gradient(top, #3e779d, #65a9d7);
+   background-image: -ms-linear-gradient(top, #3e779d 0%, #65a9d7 100%);
+   color: #333961;
+}
+/* 紙のような質と立体感 */
+.effect
+{
+    position:relative;
+    -webkit-box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+       -moz-box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+            box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+}

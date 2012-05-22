@@ -1,0 +1,136 @@
+/************************************
+  Header部分
+*************************************/
+html,body {
+	/* FireFox用 boxの親でのセンタリングがきかないので */
+    text-align:center;
+}
+.header {
+	background:black;
+	width:100%;
+	/* Firefox用 */
+	background:-moz-linear-gradient(
+			left top,#000000,  
+            #333333 40%,
+            #000000 80%);
+	/* Safari,Google Chrome用 */
+	background:-webkit-gradient(
+			linear,left top,right bottom,
+			from(#000000),  
+            color-stop(0.4, #333333),    
+            color-stop(0.8, #000000));
+	/* IE 使えるみたいだが複数していの仕方がわからない
+    filter:progid:DXImageTransform.Microsoft.gradient
+	(startColorstr=#000000,endColorstr=#333333);
+    zoom: 1; */
+}
+.header_str {
+	color:white;
+}
+/************************************
+  wrap(3カラムレイアウト) rightはリキッドレイアウト(可変)
+*************************************/
+.wrap {
+	width:100%;
+	display: -webkit-box;
+    display: -moz-box;
+    display: -o-box;
+    display: box;
+	/* センタリング.テキストを左に戻す*/
+	margin:0 auto;
+	text-align:left;
+}
+/************************************
+  left(左側のコンテンツ)の設定
+*************************************/
+.left {
+	width:150px;
+}
+.left_con {
+	padding-top:15px;
+	margin-left:45px;
+}
+/************************************
+  center(中央のコンテンツ)の設定
+*************************************/
+.center {
+	width:630px;
+	border-left:1px solid #ccc;
+	border-right:1px solid #ccc;
+}
+.center_con {
+	padding-top:15px;
+	margin-left:10px;
+}
+.center_con_con {
+	width:610px;
+	display: -webkit-box;
+    display: -moz-box;
+    display: -o-box;
+    display: box;
+	/* センタリング.テキストを左に戻す*/
+	margin:0 auto;
+	text-align:left;
+}
+.center_left {
+	width:250px;
+}
+/* 画像の位置調整 */
+.center_left img {
+	margin-left:15px;
+}
+.center_right {
+	width:360px;
+}
+/* レーティングテーブルの位置調整 */
+.rating_view {
+	margin-left:20px;
+}
+.mainth {
+	padding-left:2px;
+	font-size:14px;
+	color:#363636;
+}
+.rating_talbe td {
+	padding:2px;
+}
+/* レーティングの背景部分 */
+.rating_back {
+	width:302px;
+	height:27px;
+	background-image:url(../images/Chart_back.png);
+	position:relative;
+}
+/* レーティング一番右の数値 */
+.suuti {
+	position:absolute;
+	top:1px;
+	left:307px;
+	font-weight:bold;
+}
+/* レーティング画像各パーツの位置調整 */
+.rating_center {
+	margin-top:1px;
+}
+.rating_left {
+	margin-left:1px;
+	margin-bottom:1px;
+}
+.rating_right {
+	margin-bottom:1px;
+}
+/* 言語間のパディング設定 */
+.proglang a {
+	margin:2px;
+}
+/************************************
+  right(右側のコンテンツ)の設定
+*************************************/
+.right {
+	-moz-box-flex: 1;
+	-webkit-box-flex: 1;
+}
+.right_con {
+	padding-top:15px;
+	margin-left:10px;
+}

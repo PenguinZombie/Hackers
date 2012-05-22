@@ -1,0 +1,410 @@
+/*
+	css3は個別に用意されている,冗長にみえてややこしいが個別に設定しているだけ
+	-webkit- Safari Google Chrome
+	-moz-    Firefox
+	-o-	     Opera
+	-ms-     IE
+*/
+/************************************
+  Header部分
+*************************************/
+html,body {
+	/* FireFox用 boxの親でのセンタリングがきかないので */
+    text-align:center;
+	height:100%;
+	background-color:#ebeae7;
+}
+
+.header {
+	background:black;
+	width:100%;
+	/* Firefox用 */
+	background:-moz-linear-gradient(
+			left top,#000000,  
+            #333333 40%,
+            #000000 80%);
+	/* Safari,Google Chrome用 */
+	background:-webkit-gradient(
+			linear,left top,right bottom,
+			from(#000000),  
+            color-stop(0.4, #333333),    
+            color-stop(0.8, #000000));
+	/* IE 使えるみたいだが複数していの仕方がわからない
+    filter:progid:DXImageTransform.Microsoft.gradient
+	(startColorstr=#000000,endColorstr=#333333);
+    zoom: 1; */
+}
+/************************************
+  ログインフォーム,メイン部分と同じ2カラムで処理
+*************************************/
+.logo {
+	width:1000px;
+	display: -webkit-box;
+    display: -moz-box;
+    display: -o-box;
+    display: box;
+	/* センタリング.テキストを左に戻す*/
+	margin:0 auto;
+	text-align:left;
+}
+/* ロゴ画像の位置調整 */
+.logo .image {
+	width:500px;
+	margin-top:16px;
+}
+/* ログインフォームの位置調整 */
+.login_form {
+	width:500px;
+	margin-top:9px;
+	margin-left:100px;
+}
+/* テキストボックスの設定 */
+.login-input {
+	width:150px;
+	height:17px;
+	border:1px solid #cccccc;
+	/* 上下 左右*/
+	padding:1px 5px;
+	/* ブラウザによって違うフォーカス時の線を無しにする */
+	outline:none;
+	font-size:12px;
+	/* 角を少しまるくする */
+	border-radius:2px;
+	/* 背景のグラデーション
+	　　 Firefox */
+    background:-moz-linear-gradient(
+        top,
+        #eee,
+        #fff
+	);
+	/* Webkit */
+    background:-webkit-gradient(
+        linear,
+        left top,
+        left bottom,
+        from(#eee),
+        to(#fff)
+    );
+	/* IE */
+    filter:progid:DXImageTransform.Microsoft.gradient
+	(startColorstr=#ffeeeeee,endColorstr=#ffffffff);
+    zoom: 1;
+}
+/* フォーカスしたときに影をつける */
+.login-input:focus {
+	border:1px solid #66ccff;
+	/* box-shadow:縦,横.ぼかし,広がり */
+	/* Safari, Chrome用 外側,内側の影 カンマ区切りでしないと両方指定出来ない */
+	-webkit-box-shadow:0px 0px 3px 0px #66ccff , inset 0px 0px 3px 0px #66ccff;
+	/* Firefox用 外側,内側の影 */
+	-moz-box-shadow:0px 0px 3px 0px #66ccff , inset 0px 0px 3px 0px #66ccff;
+	/* 他のブラウザ?　CSS3 デフォルトの書き方 */
+	box-shadow:0px 0px 3px 0px #66ccff , inset 0px 0px 3px 0px #66ccff;
+}
+/* テキストをテキストボックスと重ねるように設定 */
+.login_table .placeholding-input .placeholder {
+	position:absolute;
+	top:3px;
+	left:8px;
+	color:#999;
+	font-size:15px;
+	cursor:text;
+}
+/* ログイン保持の文字 */
+.moj1 {
+	color:#ccc;
+	margin-left:6px;
+	font-size:12px;
+}
+/* パスワードを忘れた方 */
+.moj2 {
+	color:#ccc;
+	font-size:12px;
+}
+/* パスワードの忘れた方のaタグ */
+.moj2 a {
+	color:#ccc;
+	text-decoration:none;
+	font-size:12px;
+}
+.login_table td {
+	padding:3px;
+	text-align:left;
+}
+/* テーブルが崩れないように高さを設定しておく */
+.login_table .gif_center1 {
+	height:28px;
+}
+/* relativeのためのクラス */
+.login_table .gif_center2 {
+	position:relative
+}
+/* relativeからの相対指定で調整,ログイン時のロードGIF */
+.load-gif2 {
+	display:none;
+	position:absolute;
+	top:-8px;
+	left:26px;
+}
+.login_message {
+	display:none;
+	padding:3px;
+	color:#ddd;
+	font-size:12px;
+	font-weight:bold;
+	border-radius:2px;
+	background-color:#444;
+}
+/* 文字サイズをかえるとラジオ等とテキストの文字がずれる、それを戻す */
+input {
+	vertical-align:middle;
+}
+/************************************
+  wrap(2カラムレイアウト.両方を包むクラス) css3のboxでレイアウト(IE未対応だけど)
+*************************************/
+.wrap { 
+	width:1000px;
+	display: -webkit-box;
+    display: -moz-box;
+    display: -o-box;
+    display: box;
+	/* センタリング.テキストを左に戻す*/
+	margin:0 auto;
+	text-align:left;
+}
+/************************************
+  left(左側のコンテンツ)の設定
+*************************************/
+.wrap .left {
+	width:630px;
+	/* boxプロパティ 左から何番目に表示するか,これだけで変更出来る */
+	/* 初期はhtmlの順番なのでなくても大丈夫 */
+	-webkit-box-ordinal-group: 1;
+    -moz-box-ordinal-group: 1;
+    -o-box-ordinal-group: 1;
+    box-ordinal-group: 1;
+}
+/************************************
+  right(右側のコンテンツ)の設定
+*************************************/
+.wrap .right {
+	width:370px;
+	-webkit-box-ordinal-group: 2;
+    -moz-box-ordinal-group: 2;
+    -o-box-ordinal-group: 2;
+    box-ordinal-group: 2;
+	/* これを忘れると背景の色が反映してしまうので白にしておく */
+	background-color:#FFFFFF;
+	margin:25px 0;
+}
+.sign_up {
+	padding:25px 25px 10px 25px;
+}
+.sign_title {
+	font-size:22px;
+	font-weight:bold;
+	text-align:left;
+}
+/* tableの設定 */
+.Register_table td {
+	padding:5px;
+	text-align:right;
+}
+.move {
+	margin-top:10px;
+}
+/* テキストボックスの設定 */
+.text-input {
+	width:290px;
+	border:1px solid #cccccc;
+	/* 上下 左右*/
+	padding:5px 7px;
+	/* ブラウザによって違うフォーカス時の線を無しにする */
+	outline:none;
+	/* 角を少しまるくする */
+	border-radius:2px;
+	/* 背景のグラデーション
+	　　 Firefox */
+    background:-moz-linear-gradient(
+        top,
+        #eee,
+        #fff
+	);
+	/* Webkit */
+    background:-webkit-gradient(
+        linear,
+        left top,
+        left bottom,
+        from(#eee),
+        to(#fff)
+    );
+	/* IE */
+    filter:progid:DXImageTransform.Microsoft.gradient
+	(startColorstr=#ffeeeeee,endColorstr=#ffffffff);
+    zoom: 1;
+}
+/* フォーカスしたときに影をつける */
+.text-input:focus {
+	border:1px solid #66ccff;
+	/* box-shadow:縦,横.ぼかし,広がり */
+	/* Safari, Chrome用 外側,内側の影 カンマ区切りでしないと両方指定出来ない */
+	-webkit-box-shadow:0px 0px 3px 0px #66ccff , inset 0px 0px 3px 0px #66ccff;
+	/* Firefox用 外側,内側の影 */
+	-moz-box-shadow:0px 0px 3px 0px #66ccff , inset 0px 0px 3px 0px #66ccff;
+	/* 他のブラウザ?　CSS3 デフォルトの書き方 */
+	box-shadow:0px 0px 3px 0px #66ccff , inset 0px 0px 3px 0px #66ccff;
+}
+/************************************
+  right_プレースホルダの設定(フォーカス有りで消さないで薄くする)
+*************************************/
+/* 一番外枠のplaceholding-inputを基準にする */
+.placeholding-input {
+	position:relative;
+}
+/* テキストをテキストボックスと重ねるように設定 */
+.placeholding-input .placeholder {
+	position:absolute;
+	top:6px;
+	left:11px;
+	color:#999;
+	font-size:16px;
+	cursor:text;
+}
+/* +での連結はその要素のあとって意味だけど,これでフォーカスしたときに.placeholderのCSSを変更出来る */
+.placeholding-input input:focus + .placeholder{
+	color:#ccc;
+}
+.load-gif1 {
+	margin-right:15px;
+	display:none;
+}
+/* エラーメッセージ部分を隠す */
+.result {
+	color:red;
+	font-weight:bold;
+	font-size:12px;
+	text-align:left;
+	display:none;
+	border:2px solid red;
+	background-color:#ffff99;
+	padding:8px;
+	border-radius:2px;
+}
+/************************************
+  footer(フッター部分)の設定
+*************************************/
+.footer {
+	width:100%;
+	height:50px;
+	background-color:#AAAAAA;
+	/* この二つでフッターを一番下に固定出来る */
+	position: absolute; 
+	bottom: 0;
+}
+.footer_content {
+	/* heightと同じ高さにすることで垂直方向の真ん中に配置出来る */
+	line-height:50px
+}
+/************************************
+  ボタンだったりboxに対してのCSS(デザイン関係のCSSはほぼコピペ)
+*************************************/
+/* 全て参考資料参考 */
+/* ログイン */
+.login_button {
+   border: 1px solid #0a3c59;
+   background: #3e779d;
+   background: -webkit-gradient(linear, left top, left bottom, from(#65a9d7), to(#3e779d));
+   background: -webkit-linear-gradient(top, #65a9d7, #3e779d);
+   background: -moz-linear-gradient(top, #65a9d7, #3e779d);
+   background: -ms-linear-gradient(top, #65a9d7, #3e779d);
+   background: -o-linear-gradient(top, #65a9d7, #3e779d);
+   background-image: -ms-linear-gradient(top, #65a9d7 0%, #3e779d 100%);
+   padding: 2px 9px;
+   -webkit-border-radius: 0px;
+   -moz-border-radius: 0px;
+   border-radius: 0px;
+   -webkit-box-shadow: rgba(255,255,255,0.4) 0 0 0, inset rgba(255,255,255,0.4) 0 1px 0;
+   -moz-box-shadow: rgba(255,255,255,0.4) 0 0 0, inset rgba(255,255,255,0.4) 0 1px 0;
+   box-shadow: rgba(255,255,255,0.4) 0 0 0, inset rgba(255,255,255,0.4) 0 1px 0;
+   color: #06416c;
+   font-size: 14px;
+   font-family: helvetica, serif;
+   text-decoration: none;
+   vertical-align: middle;
+   }
+.login_button:hover {
+   border: 1px solid #0a3c59;
+   background: #3e779d;
+   background: -webkit-gradient(linear, left top, left bottom, from(#65a9d7), to(#3e779d));
+   background: -webkit-linear-gradient(top, #65a9d7, #3e779d);
+   background: -moz-linear-gradient(top, #65a9d7, #3e779d);
+   background: -ms-linear-gradient(top, #65a9d7, #3e779d);
+   background: -o-linear-gradient(top, #65a9d7, #3e779d);
+   background-image: -ms-linear-gradient(top, #65a9d7 0%, #3e779d 100%);
+   cursor:pointer;
+   }
+.login_button:active {
+   border: 1px solid #0a3c59;
+   background: #65a9d7;
+   background: -webkit-gradient(linear, left top, left bottom, from(#3e779d), to(#3e779d));
+   background: -webkit-linear-gradient(top, #3e779d, #65a9d7);
+   background: -moz-linear-gradient(top, #3e779d, #65a9d7);
+   background: -ms-linear-gradient(top, #3e779d, #65a9d7);
+   background: -o-linear-gradient(top, #3e779d, #65a9d7);
+   background-image: -ms-linear-gradient(top, #3e779d 0%, #65a9d7 100%);
+}
+/* アカウント登録 */
+.register {
+   border: 1px solid #0a3c59;
+   background: #3e779d;
+   background: -webkit-gradient(linear, left top, left bottom, from(#65a9d7), to(#3e779d));
+   background: -webkit-linear-gradient(top, #65a9d7, #3e779d);
+   background: -moz-linear-gradient(top, #65a9d7, #3e779d);
+   background: -ms-linear-gradient(top, #65a9d7, #3e779d);
+   background: -o-linear-gradient(top, #65a9d7, #3e779d);
+   background-image: -ms-linear-gradient(top, #65a9d7 0%, #3e779d 100%);
+   padding: 9.5px 19px;
+   -webkit-border-radius: 2px;
+   -moz-border-radius: 2px;
+   border-radius: 2px;
+   -webkit-box-shadow: rgba(255,255,255,0.4) 0 1px 0, inset rgba(255,255,255,0.4) 0 1px 0;
+   -moz-box-shadow: rgba(255,255,255,0.4) 0 1px 0, inset rgba(255,255,255,0.4) 0 1px 0;
+   box-shadow: rgba(255,255,255,0.4) 0 1px 0, inset rgba(255,255,255,0.4) 0 1px 0;
+   text-shadow: #7ea4bd 0 1px 0;
+   color: #07135c;
+   font-size: 14px;
+   font-family: helvetica, serif;
+   text-decoration: none;
+   vertical-align: middle;
+}
+.register:hover {
+   border: 1px solid #0a3c59;
+   background: #3e779d;
+   background: -webkit-gradient(linear, left top, left bottom, from(#65a9d7), to(#3e779d));
+   background: -webkit-linear-gradient(top, #65a9d7, #3e779d);
+   background: -moz-linear-gradient(top, #65a9d7, #3e779d);
+   background: -ms-linear-gradient(top, #65a9d7, #3e779d);
+   background: -o-linear-gradient(top, #65a9d7, #3e779d);
+   background-image: -ms-linear-gradient(top, #65a9d7 0%, #3e779d 100%);
+   color: #333961;
+   cursor:pointer;
+}
+.register:active {
+   border: 1px solid #0a3c59;
+   background: #65a9d7;
+   background: -webkit-gradient(linear, left top, left bottom, from(#3e779d), to(#3e779d));
+   background: -webkit-linear-gradient(top, #3e779d, #65a9d7);
+   background: -moz-linear-gradient(top, #3e779d, #65a9d7);
+   background: -ms-linear-gradient(top, #3e779d, #65a9d7);
+   background: -o-linear-gradient(top, #3e779d, #65a9d7);
+   background-image: -ms-linear-gradient(top, #3e779d 0%, #65a9d7 100%);
+   color: #333961;
+}
+/* 紙のような質と立体感 */
+.effect
+{
+    position:relative;
+    -webkit-box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+       -moz-box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+            box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+}

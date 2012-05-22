@@ -1,0 +1,66 @@
+.settei_table th {
+	font-weight:bold;
+	text-align:right;
+	width:150px;
+	color:#363636;
+}
+.slider_view {
+	width:250px;
+}
+/* 数値の部分,元はテキストボックスなので横幅をいい感じに設定 */
+.slider_val {	
+	border:0;
+	color:#f6931f;
+	font-weight:bold;
+	width:28px;
+}
+.slider_view , .idea{
+	padding:10px 20px;
+}
+/* ヘルプのチェックボックスやらはいっている場所 */
+.idea_button_help {
+	text-align:left;
+}
+.hbutton {
+	text-align:center;
+}
+.dialog_open {
+	padding:3px 20px;
+}
+/* ダイアログテーブルの設定 */
+.dialog_table th {
+	font-size:14px;
+	font-weight:bold;
+	text-align:right;
+}
+.dialog_table td span{
+	margin-left:10px;
+}
+/* レーティング変更時に表示するエリア */
+.ui-area {
+	display:none;
+	color:#363636;
+	font-weight:bold;
+	width:440px;
+	padding:10px;
+	margin-top:15px;
+	margin-left:50px;
+}
+/* チェックマークの設定 */
+.ui-icon-check {
+	/* 右側に文字を表示 */
+	float:left;
+	margin-right:0.3em;
+}
+/* 出番がくるまで隠しておくもの */
+.settei_dialog , .idea_button_help {
+	display:none;
+}
+/* 上記の内容～ */
+.kakunin {
+	font-size:12px;
+}
+/* 言語表示テーブル */
+.lang_table td {
+	padding:5px;
+}

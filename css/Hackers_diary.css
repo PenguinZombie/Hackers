@@ -1,0 +1,193 @@
+/* テキストエリアの設定 */
+.user_text {
+	width:600px;
+	height:300px;
+	padding:5px;
+	border:1px solid #cccccc;
+	outline:none;
+	font-size:14px;
+}
+/* テキストエリア フォーカス時 */
+.user_text:focus {
+	border:1px solid #66ccff;
+	/* box-shadow:縦,横.ぼかし,広がり */
+	/* Safari, Chrome用 外側,内側の影 カンマ区切りでしないと両方指定出来ない */
+	-webkit-box-shadow:0px 0px 3px 0px #66ccff , inset 0px 0px 3px 0px #66ccff;
+	/* Firefox用 外側,内側の影 */
+	-moz-box-shadow:0px 0px 3px 0px #66ccff , inset 0px 0px 3px 0px #66ccff;
+	/* 他のブラウザ?　CSS3 デフォルトの書き方 */
+	box-shadow:0px 0px 3px 0px #66ccff , inset 0px 0px 3px 0px #66ccff;
+}
+.diary_cushion_area {
+	width:1000px;
+	margin:0 auto;
+	text-align:left;
+	border:1px solid #66ccff;
+	border-radius:12px;
+	padding:30px 30px 60px 30px;
+	margin-top:20px;
+	/* box-shadow:縦,横.ぼかし,広がり */
+	/* Safari, Chrome用 外側,内側の影 カンマ区切りでしないと両方指定出来ない */
+	-webkit-box-shadow:0px 0px 3px 0px #66ccff , inset 0px 0px 3px 0px #66ccff;
+	/* Firefox用 外側,内側の影 */
+	-moz-box-shadow:0px 0px 3px 0px #66ccff , inset 0px 0px 3px 0px #66ccff;
+	/* 他のブラウザ?　CSS3 デフォルトの書き方 */
+	box-shadow:0px 0px 3px 0px #66ccff , inset 0px 0px 3px 0px #66ccff;
+}
+.diary_cushion_area_in {
+	width:1000px;
+}
+.diary_cushion_submit_area {
+	margin-top:20px;
+	text-align:center;
+}
+.cta-green {
+	margin-top:8px;
+	margin-left:400px;
+}
+.cta-blue {
+	margin-top:8px;
+	margin-left:15px;
+}
+.diary_area {
+	display:none;
+}
+.lang_code {
+	font-size:13px;
+	margin-bottom:5px;
+}
+.code {
+	font-size:13px;
+}
+.code_area {
+	font-size:13px;
+}
+.css3button {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 14px;
+	color: #ffffff;
+	padding: 10px 20px;
+	background: -moz-linear-gradient(
+		top,
+		#ff2819 0%,
+		#ab0000);
+	background: -webkit-gradient(
+		linear, left top, left bottom, 
+		from(#ff2819),
+		to(#ab0000));
+	border-radius: 0px;
+	-moz-border-radius: 0px;
+	-webkit-border-radius: 0px;
+	border: 1px solid #7d0000;
+	-moz-box-shadow:
+		0px 1px 3px rgba(000,000,000,0.5),
+		inset 0px 0px 2px rgba(255,255,255,0.7);
+	-webkit-box-shadow:
+		0px 1px 3px rgba(000,000,000,0.5),
+		inset 0px 0px 2px rgba(255,255,255,0.7);
+	text-shadow:
+		0px -1px 0px rgba(000,000,000,0.4),
+		0px 1px 0px rgba(255,255,255,0.3);
+}
+
+/************************************
+  日記を表示する場所
+*************************************/
+/* 日記エリアの横幅 */
+.diary_out_area {
+	width:570px;
+}
+/* 日記ひとつをかこむ線 */
+.diary_out_one {
+	width:570px;
+	border:1px solid #ccc;
+	padding:10px 20px 20px 20px;
+	margin:10px 0;
+}
+/* 日付部分の水平線 */
+.diary_out_one .suihei {
+	border:1px solid #ccc;
+	border-width:1px 0 0;
+}
+/* ページ画像ひとつを表示する部分 */
+.pagination_one {
+	position:relative;
+	/* 横幅をすこしあける */
+	margin:0 2px;
+}
+/* 画像に文字を重ねる(1桁) */
+.pagination_one .pagination_pages_one {
+	position:absolute;
+	top:-12px;
+	left:13px;
+	color:#7e7e7e;
+	font-size:14px;
+	font-weight:bold;
+	font-family:arial;
+}
+/* 画像に文字を重ねる(2桁) */
+.pagination_one .pagination_pages_two {
+	position:absolute;
+	top:-12px;
+	left:9px;
+	color:#7e7e7e;
+	font-size:14px;
+	font-weight:bold;
+	font-family:arial;
+}
+/* 画像に文字を重ねる(3桁) */
+.pagination_one .pagination_pages_th {
+	position:absolute;
+	top:-12px;
+	left:5px;
+	color:#7e7e7e;
+	font-size:14px;
+	font-weight:bold;
+	font-family:arial;
+}
+/* .pagination_one中のaタグの設定 */
+.pagination_one a {
+	text-decoration:none;
+}
+/* 現在のページは一応リンクをつけておく,カーソルはテキストに変更させる */
+.pagination_current a {
+	cursor:text;
+}
+/* aタグ中のイメージ ボーダー非表示 */
+.pagination_one　a img {
+	border:none
+}
+/* 前のページ,次のページがない場合に表示 */
+.NoPages img{
+	padding-right:2px;
+	padding-left:2px;
+	padding-bottom:3px;
+}
+.back_next{
+	text-align:center;
+}
+/* pagination~中のaタグの文字の色を全て同じにする
+.pagination_one a:link { color:#7e7e7e; }
+.pagination_one a:visited { color:#7e7e7e;　}
+.pagination_one a:hover { color:#7e7e7e; }
+.pagination_one a:active{ color:#ffff00; } */
+/************************************
+  プレースホルダの設定(フォーカス有りで消さないで薄くする)
+*************************************/
+/* 一番外枠のplaceholding-inputを基準にする */
+.placeholding-input {
+	position:relative;
+}
+/* テキストをテキストボックスと重ねるように設定 */
+.placeholding-input .placeholder {
+	position:absolute;
+	top:7px;
+	left:9px;
+	color:#999;
+	font-size:14px;
+	cursor:text;
+}
+/* +での連結はその要素のあとって意味だけど,これでフォーカスしたときに.placeholderのCSSを変更出来る */
+.placeholding-input textarea:focus + .placeholder{
+	color:#ccc;
+}

@@ -1,0 +1,65 @@
+/************************************
+  テキストボックス/プレースホルダの設定
+*************************************/
+/* テキストボックスの設定 */
+.com_search {
+	width:250px;
+	height:18px;
+	border:1px solid #cccccc;
+	/* 上下 左右*/
+	padding:1px 5px;
+	/* ブラウザによって違うフォーカス時の線を無しにする */
+	outline:none;
+	font-size:12px;
+	/* 角を少しまるくする */
+	border-radius:2px;
+	/* 背景のグラデーション
+	　　 Firefox */
+    background:-moz-linear-gradient(
+        top,
+        #eee,
+        #fff
+	);
+	/* Webkit */
+    background:-webkit-gradient(
+        linear,
+        left top,
+        left bottom,
+        from(#eee),
+        to(#fff)
+    );
+	/* IE */
+    filter:progid:DXImageTransform.Microsoft.gradient
+	(startColorstr=#ffeeeeee,endColorstr=#ffffffff);
+    zoom: 1;
+}
+/* フォーカスしたときに影をつける */
+.com_search:focus {
+	border:1px solid #66ccff;
+	/* box-shadow:縦,横.ぼかし,広がり */
+	/* Safari, Chrome用 外側,内側の影 カンマ区切りでしないと両方指定出来ない */
+	-webkit-box-shadow:0px 0px 3px 0px #66ccff , inset 0px 0px 3px 0px #66ccff;
+	/* Firefox用 外側,内側の影 */
+	-moz-box-shadow:0px 0px 3px 0px #66ccff , inset 0px 0px 3px 0px #66ccff;
+	/* 他のブラウザ?　CSS3 デフォルトの書き方 */
+	box-shadow:0px 0px 3px 0px #66ccff , inset 0px 0px 3px 0px #66ccff;
+}
+/* テキストをテキストボックスと重ねるように設定 */
+.all_com_area .placeholding-input .placeholder {
+	position:absolute;
+	top:3px;
+	left:8px;
+	color:#999;
+	font-size:15px;
+	cursor:text;
+}
+.placeholding-input {
+	position:relative;
+}
+/* +での連結はその要素のあとって意味だけど,これでフォーカスしたときに.placeholderのCSSを変更出来る */
+.placeholding-input input:focus + .placeholder{
+	color:#ccc;
+}
+.com_area {
+	padding:5px;
+}

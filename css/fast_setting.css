@@ -1,0 +1,47 @@
+/************************************
+  Header部分
+*************************************/
+html,body {
+	/* FireFox用 boxの親でのセンタリングがきかないので */
+    text-align:center;
+	height:100%;
+	background-color:#ebeae7;
+}
+/************************************
+  wrap(1カラムのレイアウト)
+*************************************/
+.wrap {
+	width:1000px;
+	display: -webkit-box;
+    display: -moz-box;
+    display: -o-box;
+    display: box;
+	/* センタリング.テキストを左に戻す*/
+	margin:0 auto;
+	text-align:left;
+	/* これを忘れると背景の色が反映してしまうので白にしておく */
+	background-color:#FFFFFF;
+	margin-top:20px;
+}
+.center {
+	width:1000px;
+	padding:35px;
+}
+fieldset {
+	padding:12px;
+}
+.en , .we {
+	display:none;
+}
+.dialog {
+	display:none;
+	font-size:14px;
+}
+/* 紙のような質と立体感 */
+.effect
+{
+    position:relative;
+    -webkit-box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+       -moz-box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+            box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+}
