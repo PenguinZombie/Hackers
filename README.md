@@ -13,9 +13,12 @@ CSS3のボックスレイアウトを使っているのでIEでは正しく表�
 * [jQuery-Pjax](https://github.com/defunkt/jquery-pjax)を使った必要な部分のみの読み込み
 * [SyntaxHighlighter](http://alexgorbatchev.com/SyntaxHighlighter/)を使ったコード表示
 
-## 未実装の機能
+## 未実装の機能(これからの課題)
+* 個人の掲示板
 * コミュニティの掲示板
 * 言語の追加等の設定
+* 画像のアップロード
+* 詳細なプロフィール
 * 他人のページを観覧(**重要**)
 
 ## 不具合
@@ -24,6 +27,7 @@ CSS3のボックスレイアウトを使っているのでIEでは正しく表�
 ## 苦労したところ
 * Pjaxを初めて使ったので最初は戸惑ったところ
 * 会員登録時の入力チェック(Ajax/check.php)
+* SyntaxHighlighterの実装方法
 * SQLインジェクション対策にPEARライブラリを使用
 * ページングのアルゴリズム(pjax-parts/Hackers_diary_parts.php)
 * レーティングの値受け取り,設定,表示方法  
