@@ -22,3 +22,5 @@
 * ページングのアルゴリズム(pjax-parts/Hackers_diary_parts.php)
 * レーティングの値受け取り,設定,表示方法  
 (pjax-parts/Hackers_main_parts.php , js/Hackers_settei.js , Ajax/slider_out.php)
+* データベース設計
+* パスワードの暗号化の仕様,登録完了画面での更新対策等
