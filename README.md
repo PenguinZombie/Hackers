@@ -1,4 +1,7 @@
 [Hackers](http://penguin.zombie.jp/Hackers_top.php)  
+### 動作環境
+CSS3のボックスレイアウトを使っているのでIEでは正しく表示されません
+動作を確認しているのはFirefoxの最新verのみです
 
 ## 実装している機能
 * 新規会員登録
